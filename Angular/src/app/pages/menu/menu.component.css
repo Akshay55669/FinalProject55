@@ -1,0 +1,62 @@
+.MenuBox{
+    padding: 10px 5px;
+}
+
+.MenuBox img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: groove;
+    transition: 0.3s ease-in-out;
+
+}
+.MenuBox img:hover{
+    transition: 0.3 ease-in-out ;
+    transform:scale(1.1);
+}
+.MenuBox h1{
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#cartbtn{
+    background-color: green;
+    color: white;
+}
+.highlight{
+    color:green; 
+    font-weight:bold;
+    font-style: italic;
+}
+.item img{
+    width: 81px;
+    height: 61px;
+    margin-top: 5px;
+}
+.item img:hover{
+    transition: 0.3 ease-in-out ;
+    transform:scale(1.1);
+}
+.item h6{
+    font-weight: bold;
+    margin: 6px;
+}
+.item a:hover{
+    color: green;
+}
+.item{
+    margin: 0px 15px;
+    text-align: center;
+    
+}
+.card-top{
+    border-bottom: groove;
+}
+.success-msg {
+    position:fixed;
+    top:100vh;
+    transform:translateY(-100%);
+    width:100%;
+}

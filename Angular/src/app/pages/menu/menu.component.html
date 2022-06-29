@@ -1,0 +1,65 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+        <a (click)="filter('')">
+          <img src="../../../assets/images/AllProduct.jpg" alt="AllProduct">
+          <h6>All Product</h6>
+        </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Vegetables')">
+        <img src="../../../assets/images/fresh-vegetables.jpg" alt="Vegetables">
+        <h6>Vegetables</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Fruits')">
+        <img src="../../../assets/images/fruit.jpg" alt="Fruits">
+        <h6>Fruits</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('DailyNeeds')">
+        <img src="../../../assets/images/dailyneeds.png" alt="dailyneeds">
+        <h6>DailyNeeds</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('DairyProducts')">
+        <img src="../../../assets/images/dairyproducts.jpg" alt="DairyProducts">
+        <h6>DairyProducts</h6>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+ <div class="container mt-4 mb-4">
+  <!-- <h1 class="text-center"><strong>Some </strong> <span class="highlight">Grocery Products</span></h1> -->
+  <div class="row">
+    <div class="col-lg-3 mt-3" *ngFor="let dt of filterCategory | search:searchKey:'name'">
+      <div class="MenuBox" >
+        <img src="{{dt.image}}"/>
+        <h1>{{dt.name}}</h1>
+        <p>{{dt.price|currency:'INR'}}</p>
+        <button  class="btn btn-primary" id="cartbtn" (click)=addtocart(dt)>Add to Cart</button>
+
+      </div>
+    </div>
+  </div>
+</div>  
+
+<div class="row"class="success-msg">
+  <div class="col-xs-12">
+    <p class="alert alert-success"  *ngIf="showMsg" >
+      <strong>Added to Cart Successfully </strong> Please go to CheckOut!.
+    </p>
+    <p class="alert alert-danger" *ngIf="showErrMsg" >
+      Error
+    </p>
+  </div>
+</div>
+
+
+
+    
