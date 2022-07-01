@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/iproduct';
 import { OrderDetailsService } from 'src/app/services/order-details.service';
 import { CartService } from 'src/app/services/cart.service';
+import { PaginationService } from 'src/app/services/pagination.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class MenuComponent implements OnInit {
 
 
 
-  constructor(private order: OrderDetailsService, private cartService: CartService) {  }
+  constructor(private order: OrderDetailsService, private cartService: CartService, private pagination: PaginationService) {  }
 
   ngOnInit(): void {
     this.order.getData().subscribe((data: IProduct[]) => {
@@ -39,6 +40,7 @@ export class MenuComponent implements OnInit {
     this.cartService.search.subscribe((Val: any) => {
       this.searchKey = Val;
     });
+    // this.getData();
   }
   
     // for cart
@@ -68,6 +70,18 @@ export class MenuComponent implements OnInit {
     });
   }
 
+  p:any;
+  // data:any=[];
+  getData(){
+    this.pagination.getData().subscribe(
+      (data)=> {
+        this.filterCategory=data;
+        
+      }
+    );
+  }
+
+  
 }
 
 

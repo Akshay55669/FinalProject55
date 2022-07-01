@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace OnlineGroceryStore.Model
 {
-    public class GroceryDbContext: DbContext
+    public class GroceryDbContext : DbContext
     {
         string connectionString;
 
         public DbSet<Product> Product { get; set; }
+        public DbSet<ShippingAddress> shippingAddress { get; set; }
 
         public GroceryDbContext()
         {

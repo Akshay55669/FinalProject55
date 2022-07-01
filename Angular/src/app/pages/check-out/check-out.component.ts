@@ -20,11 +20,12 @@ export class CheckOutComponent implements OnInit {
   Fname : FormControl = new FormControl("");
   Lname : FormControl = new FormControl("");
   address : FormControl = new FormControl("");
+  landmark: FormControl= new FormControl("");
   city : FormControl = new FormControl("");
   pincode : FormControl = new FormControl("");
   mobile : FormControl = new FormControl("");
   email : FormControl = new FormControl("");
-  ShippingAddress : FormControl = new FormControl("");
+  
  
 
   constructor(private cartService: CartService, private checkout:CheckOutService) { }
@@ -42,13 +43,15 @@ export class CheckOutComponent implements OnInit {
       Fname:this.Fname.value,
       Lname:this.Lname.value,
       Address:this.address.value,
+      Landmark:this.landmark.value,
       City:this.city.value,
       Pincode:this.pincode.value,
       MobileNo:this.mobile.value,
       Email:this.email.value,
-      ShipAddress:this.ShippingAddress.value,
+      
     };
     this.checkout.addDetail(details);
+    // alert("Data Saved");
   }
   
 }

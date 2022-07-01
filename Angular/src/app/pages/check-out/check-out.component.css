@@ -682,7 +682,7 @@ h5 {
     width: 39px;
     height: 13px;
 }*/
-.place-order {
+#place-order {
     background-color: green;
     border: none;
     padding: 7px;

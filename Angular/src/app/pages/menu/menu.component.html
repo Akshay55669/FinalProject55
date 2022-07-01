@@ -37,15 +37,15 @@
  <div class="container mt-4 mb-4">
   <!-- <h1 class="text-center"><strong>Some </strong> <span class="highlight">Grocery Products</span></h1> -->
   <div class="row">
-    <div class="col-lg-3 mt-3" *ngFor="let dt of filterCategory | search:searchKey:'name'">
+    <div class="col-lg-3 mt-3" *ngFor="let dt of filterCategory|paginate:{ itemsPerPage: 8, currentPage:p } | search:searchKey:'name'">
       <div class="MenuBox" >
         <img src="{{dt.image}}"/>
         <h1>{{dt.name}}</h1>
         <p>{{dt.price|currency:'INR'}}</p>
         <button  class="btn btn-primary" id="cartbtn" (click)=addtocart(dt)>Add to Cart</button>
-
       </div>
     </div>
+    <pagination-controls (pageChange)="p =$event" class="float"></pagination-controls>
   </div>
 </div>  
 

@@ -4,9 +4,10 @@ export interface ICheckOut {
     Fname:string;
     Lname:string;
     Address:string;
-    City:String;
+    Landmark:string;
+    City:string;
     Pincode:number;
     MobileNo:number;
     Email:number;
-    ShipAddress:string;
+    
 }
