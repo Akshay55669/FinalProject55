@@ -74,8 +74,8 @@ export class MenuComponent implements OnInit {
   p:any;
   getData(){
     this.pagination.getData().subscribe(
-      (data)=> {
-        this.filterCategory=data;
+      (page)=> {
+        this.filterCategory=page;
         
       }
     );

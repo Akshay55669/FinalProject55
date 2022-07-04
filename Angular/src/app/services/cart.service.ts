@@ -30,19 +30,19 @@ export class CartService {
     this.productList.next(product);
   }
 
-  addtoCart(product:any){
+  addtoCart(product:IProduct){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
     console.log(this.cartItemList);
   }
   
-  incrementQuantity(product:any){
+  incrementQuantity(product:IProduct){
     const i = this.cartItemList.indexOf(product)
     this.cartItemList[i].quantity++;
   }
 
-  decrementQuantity(product:any){
+  decrementQuantity(product:IProduct){
     const i = this.cartItemList.indexOf(product)
     this.cartItemList[i].quantity--;
   }

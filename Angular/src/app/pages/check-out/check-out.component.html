@@ -38,7 +38,7 @@
                 </div>
                 <div class="width:17px">
                     <label for="email">Email Address</label>
-                    <input type="text" name="email" id="email" [formControl]="Email" placeholder="Enter email-id">
+                    <input type="text" name="email" id="email" [formControl]="email" placeholder="Enter email-id">
                 </div>
             </div>
 
@@ -47,6 +47,8 @@
                 <tr *ngFor="let list of product; let i= index">
                     <td>{{i+1}}.</td>
                     <td>{{list.name}}</td>
+
+                  
                 </tr>
                 <div class="row">
                     <h4 class="inline">Item Total</h4>{{grandTotal|currency:'INR'}}

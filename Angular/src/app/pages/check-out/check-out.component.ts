@@ -38,7 +38,7 @@ export class CheckOutComponent implements OnInit {
   city : FormControl = new FormControl("");
   pincode : FormControl = new FormControl("");
   mobile : FormControl = new FormControl("");
-  Email : FormControl = new FormControl("");
+  email : FormControl = new FormControl("");
   
  
 
@@ -61,7 +61,7 @@ export class CheckOutComponent implements OnInit {
       City:this.city.value,
       Pincode:parseInt(this.pincode.value),
       MobileNo:parseInt( this.mobile.value),
-      Email:this.Email.value,
+      Email:this.email.value,
       
     };
     this.checkout.addDetail(details);
