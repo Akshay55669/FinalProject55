@@ -44,7 +44,7 @@ export class MenuComponent implements OnInit {
   }
   
     // for cart
-  addtocart(cart: any) {
+  addtocart(cart: IProduct) {
     if(!this.cartService.cartItemList.includes(cart)){
     this.cartService.addtoCart(cart);
     this.showMsg=true;
@@ -70,8 +70,8 @@ export class MenuComponent implements OnInit {
     });
   }
 
+  //Pagination
   p:any;
-  // data:any=[];
   getData(){
     this.pagination.getData().subscribe(
       (data)=> {
@@ -81,6 +81,9 @@ export class MenuComponent implements OnInit {
     );
   }
 
+  saveProduct(cart:IProduct){
+    this.cartService.productDetail(cart)
+  }
   
 }
 

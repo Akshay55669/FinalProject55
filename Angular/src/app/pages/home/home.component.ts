@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     
   }
 
-  addtocart(cart: any) {
+  addtocart(cart: IProduct) {
     if(!this.cartService.cartItemList.includes(cart)){
     this.cartService.addtoCart(cart);
     this.showMsg=true;

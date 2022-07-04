@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CheckOutService } from 'src/app/services/check-out.service';
 import { ICheckOut } from 'src/app/icheck-out';
 import { IProduct } from 'src/app/iproduct';
+
 
 
 
@@ -17,6 +18,19 @@ export class CheckOutComponent implements OnInit {
   public product:any;
   public grandTotal!: number;
 
+  // UserDetail=new FormGroup({
+  //   fname: new FormControl('',Validators.required),
+  //   lname: new FormControl('',Validators.required),
+  //   address: new FormControl('',Validators.required),
+  //   landmark: new FormControl('',Validators.required),
+  //   city: new FormControl('',Validators.required),
+  //   pincode: new FormControl('',Validators.required),
+  //   Mobile: new FormControl('',Validators.required),
+  //   email: new FormControl('',Validators.required),
+  // })
+
+  // get name(){return this.UserDetail.get('Fname')}
+
   Fname : FormControl = new FormControl("");
   Lname : FormControl = new FormControl("");
   address : FormControl = new FormControl("");
@@ -24,7 +38,7 @@ export class CheckOutComponent implements OnInit {
   city : FormControl = new FormControl("");
   pincode : FormControl = new FormControl("");
   mobile : FormControl = new FormControl("");
-  email : FormControl = new FormControl("");
+  Email : FormControl = new FormControl("");
   
  
 
@@ -45,13 +59,14 @@ export class CheckOutComponent implements OnInit {
       Address:this.address.value,
       Landmark:this.landmark.value,
       City:this.city.value,
-      Pincode:this.pincode.value,
-      MobileNo:this.mobile.value,
-      Email:this.email.value,
+      Pincode:parseInt(this.pincode.value),
+      MobileNo:parseInt( this.mobile.value),
+      Email:this.Email.value,
       
     };
     this.checkout.addDetail(details);
     // alert("Data Saved");
   }
+
   
 }

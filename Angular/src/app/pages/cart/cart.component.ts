@@ -36,12 +36,12 @@ export class CartComponent implements OnInit {
     return this.grandTotal
   }
 
-  plus(product:any){
+  plus(product:IProduct){
     if(product.quantity!=5)    
     this.cartService.incrementQuantity(product);
   }
 
-  minus(product:any){
+  minus(product:IProduct){
       if(product.quantity!=1)
         this.cartService.decrementQuantity(product);
       else

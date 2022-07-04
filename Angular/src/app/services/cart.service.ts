@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import{HttpClient}from '@angular/common/http'
 import { IProduct } from '../iproduct';
 
 @Injectable({
@@ -11,7 +12,14 @@ export class CartService {
   public search=new BehaviorSubject<string>('');
   public productList=new BehaviorSubject<any>([]);
 
-  constructor() { }
+  constructor(private http :HttpClient) { }
+
+  productDetail(cartItemList: IProduct){
+    let url="https://localhost:44307/api/CartProducts"
+     this.http.post(url,cartItemList)
+     .subscribe(result=>console.log("Data send to Database"));
+  }
+
 
   getProducts(){
     return this.productList.asObservable();
@@ -28,7 +36,7 @@ export class CartService {
     this.getTotalPrice();
     console.log(this.cartItemList);
   }
-
+  
   incrementQuantity(product:any){
     const i = this.cartItemList.indexOf(product)
     this.cartItemList[i].quantity++;

@@ -8,11 +8,17 @@
                 
                 <div class="width50 padright">
                     <label for="fname">First Name</label>
-                    <input type="text" name="fname" id="fname" [formControl]="Fname" placeholder="Enter your first name" required>
+                    <input type="text"  name="fname" id="fname" [formControl]="Fname" placeholder="Enter your first name" required>
+                    <!-- <span class="error" *ngIf="Fname.invalid && Fname.touched" >Name is required</span> -->
+                    <!-- <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                        First Name is required
+                    </div> -->
+                    
                 </div>
                 <div class="width50">
                     <label for="lname">Last Name</label>
                     <input type="text" name="lname" id="lname" [formControl]="Lname" placeholder="Enter your last name" required>
+                    
                 </div>
                 <label for="address">Address</label>
                 <input type="text" name="address" id="address" [formControl]="address" placeholder="Enter your address" required>
@@ -28,19 +34,12 @@
                 </div>
                 <div class="width50 padright">
                     <label for="Mobile">Mobile no</label>
-                    <input type="text" name="Mobile" id="Mobile" [formControl]="mobile" placeholder="Enter mobile no.">
+                    <input type="text" name="Mobile" id="Mobile"  [formControl]="mobile" placeholder="Enter mobile no.">
                 </div>
                 <div class="width:17px">
                     <label for="email">Email Address</label>
-                    <input type="text" name="email" id="email" [formControl]="email" placeholder="Enter email-id">
+                    <input type="text" name="email" id="email" [formControl]="Email" placeholder="Enter email-id">
                 </div>
-                <!-- <input type="checkbox" value="2" name="checkbox"><p>Create an account?</p> -->
-                <!-- <div class="width:17px">
-                    <label for="address">Shipping Address</label>
-                    <input type="text" name="address" id="address"[formControl]="ShippingAddress"  placeholder="Enter your delivery address">
-                </div> -->
-                <!-- <label for="notes" class="notes">Order Notes</label>
-                <textarea name="notes" id="notes" placeholder="Notes about your order, e.g. special notes for delivery."></textarea> -->
             </div>
 
             <div class="col-5 col order">

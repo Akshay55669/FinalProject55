@@ -12,6 +12,7 @@ namespace OnlineGroceryStore.Model
 
         public DbSet<Product> Product { get; set; }
         public DbSet<ShippingAddress> shippingAddress { get; set; }
+        public DbSet<CartProduct> CartProduct { get; set; }
 
         public GroceryDbContext()
         {
