@@ -1,9 +1,9 @@
 <form>
-<div class="col-8 col order">
+<div class="col-6 col order">
     <h3 class="topborder"><span>Your Order Item</span></h3>
     <tr *ngFor="let list of product; let i= index">
         <td>{{i+1}}.</td>
-        <td>{{list.name}}</td> &nbsp;
+        <td>{{list.name}}</td> 
         <td><img style="width: 120px;" src="{{list.image}}" alt=""></td>
     </tr>
     <div class="row">
