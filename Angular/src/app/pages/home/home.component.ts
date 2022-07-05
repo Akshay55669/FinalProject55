@@ -12,45 +12,45 @@ import { CartService } from 'src/app/services/cart.service';
 export class HomeComponent implements OnInit {
 
   result: IProduct[] = [];
-  showMsg=false;
-  showErrMsg=false;
-  public filterCategory:any;
+  showMsg = false;
+  showErrMsg = false;
+  public filterCategory: any;
 
-  constructor(private order:OrderDetailsService, private cartService: CartService) { }
+  constructor(private order: OrderDetailsService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.order.getData().subscribe((data: IProduct[]) => {
-    console.log(data);
-    this.filterCategory=data;
-    this.result = data;
+      console.log(data);
+      this.filterCategory = data;
+      this.result = data;
 
-     // for cart use------------------------
+      // for cart use------------------------
       this.result.forEach((a: any) => {
-      Object.assign(a, { quantity: 1, total: a.Price })
+        Object.assign(a, { quantity: 1, total: a.Price })
       });
     });
-    
+
   }
 
   addtocart(cart: IProduct) {
-    if(!this.cartService.cartItemList.includes(cart)){
-    this.cartService.addtoCart(cart);
-    this.showMsg=true;
-    setTimeout(()=>{this.showMsg=false},1000)
+    if (!this.cartService.cartItemList.includes(cart)) {
+      this.cartService.addtoCart(cart);
+      this.showMsg = true;
+      setTimeout(() => { this.showMsg = false }, 1000)
     }
-    else if(!this.cartService.hasReachedMaxQuantity(cart)){
+    else if (!this.cartService.hasReachedMaxQuantity(cart)) {
       this.cartService.incrementQuantity(cart);
-      this.showMsg=true;
-      setTimeout(()=>{this.showMsg=false},1000)
+      this.showMsg = true;
+      setTimeout(() => { this.showMsg = false }, 1000)
     }
-    else{
-      this.showErrMsg=true;
-      setTimeout(()=>{this.showErrMsg=false},1000)
+    else {
+      this.showErrMsg = true;
+      setTimeout(() => { this.showErrMsg = false }, 1000)
     }
   }
 
 
 
-  
+
 
 }

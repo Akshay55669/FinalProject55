@@ -1,0 +1,22 @@
+<form>
+<div class="col-8 col order">
+    <h3 class="topborder"><span>Your Order Item</span></h3>
+    <tr *ngFor="let list of product; let i= index">
+        <td>{{i+1}}.</td>
+        <td>{{list.name}}</td> &nbsp;
+        <td><img style="width: 120px;" src="{{list.image}}" alt=""></td>
+    </tr>
+    <div class="row">
+        <h4 class="inline">Item Total</h4>{{grandTotal|currency:'INR'}}
+    </div>
+    <div>
+        <h5 class="inline difwidth">Shipping and Handling</h5>
+        <p class="inline alignright center">Free Shipping</p>
+    </div>
+    <div>
+        <h5>Total Amount</h5>{{grandTotal|currency:'INR'}}
+    </div>
+
+    <button class="btn btn-primary" id="place-order" >Place Order</button>
+</div>
+</form>

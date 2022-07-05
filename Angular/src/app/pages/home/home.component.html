@@ -76,50 +76,37 @@
         <img src="{{gd.image}}" />
         <h1>{{gd.name}}</h1>
         <p>{{gd.price|currency:'INR'}}</p>
-        <button  class="btn btn-primary" id="cartbtn" (click)=addtocart(gd)>Add to Cart</button>
+        <button class="btn btn-primary" id="cartbtn" (click)=addtocart(gd)>Add to Cart</button>
       </div>
     </div>
   </div>
 
-
-  <!-- <div class="card col-md-3" style="width: 18rem;" *ngFor="let gd of filterCategory; index as i">
-    <img class="card-img-top" src="{{gd.image}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{gd.name}}</h5>
-      <p>{{gd.price|currency:'INR'}}</p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a class="btn btn-primary" (click)=addtocart(gd)>Add to Cart</a>
-    </div>
-  </div> -->
-  <!-- <a routerLink="menu" class="viewmorebtn">View More<i class="bi bi-arrow-right"></i></a> -->
-  
-  <!-- static data -->
   <div class="Container">
-  <h1 class="text-center"><strong>Some </strong> <span class="highlight">Grocery Categorie</span></h1>
+    <h1 class="text-center"><strong>Some </strong> <span class="highlight">Grocery Categorie</span></h1>
 
     <div class="row">
-      
+
       <div class="col-md-3" id="card">
         <img class="item-image" src="../../../assets/images/fresh-vegetables.jpg" alt="">
         <h2>Vegetables</h2>
         <h4>love to eat Vegetables</h4>
-        <a  routerLink="menu" class="Btn">GoToMenu<i class="bi bi-arrow-right"></i></a>
+        <a routerLink="menu" class="Btn">GoToMenu<i class="bi bi-arrow-right"></i></a>
       </div>
-      
+
       <div class="col-md-3" id="card">
         <img class="item-image" src="../../../assets/images/fruit.jpg" alt="">
         <h2>Fruits</h2>
         <h4>love to eat Fruits</h4>
         <a routerLink="menu" class="Btn">GoToMenu <i class="bi bi-arrow-right"></i></a>
       </div>
-      
+
       <div class="col-md-3" id="card">
         <img class="item-image" src="../../../assets/images/dailyneeds.png" alt="">
         <h2>DailyNeeds</h2>
         <h4>For DailyNeeds Purpose</h4>
         <a routerLink="menu" class="Btn">GoToMenu <i class="bi bi-arrow-right"></i></a>
       </div>
-      
+
       <div class="col-md-3" id="card">
         <img class="item-image" src="../../../assets/images/dairyproducts.jpg" alt="">
         <h2>DairyProducts</h2>
@@ -129,9 +116,9 @@
     </div>
     <br>
     <!-- <a routerLink="menu" clah3s="viewmorebtn">View More<i class="bi bi-arrow-right"></i></a> -->
-    
+
   </div>
-  
+
 </div>
-  
-  <img class="Offer" src="../../../assets/images/offer.jpg">
+
+<img class="Offer" src="../../../assets/images/offer.jpg">

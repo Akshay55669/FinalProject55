@@ -13,20 +13,20 @@ import { PaginationService } from 'src/app/services/pagination.service';
 export class MenuComponent implements OnInit {
 
   result: IProduct[] = [];
-  public filterCategory:any;
+  public filterCategory: any;
 
   searchKey: string = "";
-  showMsg=false;
-  showErrMsg=false;
+  showMsg = false;
+  showErrMsg = false;
 
 
 
-  constructor(private order: OrderDetailsService, private cartService: CartService, private pagination: PaginationService) {  }
+  constructor(private order: OrderDetailsService, private cartService: CartService, private pagination: PaginationService) { }
 
   ngOnInit(): void {
     this.order.getData().subscribe((data: IProduct[]) => {
       console.log(data);
-      this.filterCategory=data;
+      this.filterCategory = data;
       this.result = data;
 
       // for cart use------------------------
@@ -42,49 +42,48 @@ export class MenuComponent implements OnInit {
     });
     // this.getData();
   }
-  
-    // for cart
+
+  // for cart
   addtocart(cart: IProduct) {
-    if(!this.cartService.cartItemList.includes(cart)){
-    this.cartService.addtoCart(cart);
-    this.showMsg=true;
-    setTimeout(()=>{this.showMsg=false},1000)
+    if (!this.cartService.cartItemList.includes(cart)) {
+      this.cartService.addtoCart(cart);
+      this.showMsg = true;
+      setTimeout(() => { this.showMsg = false }, 1000)
     }
-    else if(!this.cartService.hasReachedMaxQuantity(cart)){
+    else if (!this.cartService.hasReachedMaxQuantity(cart)) {
       this.cartService.incrementQuantity(cart);
-      this.showMsg=true;
-      setTimeout(()=>{this.showMsg=false},1000)
+      this.showMsg = true;
+      setTimeout(() => { this.showMsg = false }, 1000)
     }
-    else{
-      this.showErrMsg=true;
-      setTimeout(()=>{this.showErrMsg=false},1000)
+    else {
+      this.showErrMsg = true;
+      setTimeout(() => { this.showErrMsg = false }, 1000)
     }
   }
 
   // Category
-  filter(category:string){
-    this.filterCategory=this.result.filter((a:any)=>{
-      if(a.category==category || category==''){
+  filter(category: string) {
+    this.filterCategory = this.result.filter((a: any) => {
+      if (a.category == category || category == '') {
         return a;
       }
     });
   }
 
   //Pagination
-  p:any;
-  getData(){
-    this.pagination.getData().subscribe(
-      (page)=> {
-        this.filterCategory=page;
-        
+  p: any;
+  getData() {
+    this.pagination.getData().subscribe((page) => {
+        this.filterCategory = page;
       }
     );
   }
 
-  saveProduct(cart:IProduct){
+  //cartproduct
+  saveProduct(cart: IProduct) {
     this.cartService.productDetail(cart)
   }
-  
+
 }
 
 

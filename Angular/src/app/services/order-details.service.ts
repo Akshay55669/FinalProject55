@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{HttpClient}from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { IProduct } from '../iproduct';
 import { Observable } from 'rxjs';
 
@@ -8,14 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class OrderDetailsService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getData():Observable<IProduct[]>{
-    // let url="http://localhost:3000/data"
-    let url="https://localhost:44307/api/products"
+  getData(): Observable<IProduct[]> {
+    let url = "https://localhost:44307/api/products"
     return this.http.get<IProduct[]>(url);
   }
 
- 
+
 
 }

@@ -2,67 +2,51 @@
 <div class="wrapper">
 
     <div class="row">
-        <form >
+        <form>
             <div class="col-7 col">
                 <h3 class="topborder"><span>Billing Details</span></h3>
-                
+
                 <div class="width50 padright">
                     <label for="fname">First Name</label>
-                    <input type="text"  name="fname" id="fname" [formControl]="Fname" placeholder="Enter your first name" required>
+                    <input type="text" name="fname" id="fname" [formControl]="Fname" placeholder="Enter your first name"
+                        required>
                     <!-- <span class="error" *ngIf="Fname.invalid && Fname.touched" >Name is required</span> -->
                     <!-- <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
                         First Name is required
                     </div> -->
-                    
+
                 </div>
                 <div class="width50">
                     <label for="lname">Last Name</label>
-                    <input type="text" name="lname" id="lname" [formControl]="Lname" placeholder="Enter your last name" required>
-                    
+                    <input type="text" name="lname" id="lname" [formControl]="Lname" placeholder="Enter your last name"
+                        required>
+
                 </div>
                 <label for="address">Address</label>
-                <input type="text" name="address" id="address" [formControl]="address" placeholder="Enter your address" required>
+                <input type="text" name="address" id="address" [formControl]="address" placeholder="Enter your address"
+                    required>
                 <!-- <input type="text" name="address" id="address2"  placeholder="Optional"> -->
                 <label for="address">LandMark</label>
-                    <input type="text" name="landmark" id="landmark"[formControl]="landmark"  placeholder="Enter your LandMark">
+                <input type="text" name="landmark" id="landmark" [formControl]="landmark"
+                    placeholder="Enter your LandMark">
                 <label for="city">Town / City</label>
                 <input type="text" name="city" id="city" [formControl]="city" placeholder="Enter your city " required>
-                
+
                 <div class="width50">
                     <label for="pincode">Pincode</label>
-                    <input type="text" name="pincode" id="pincode" [formControl]="pincode" placeholder="Pincode / Zip" required>
+                    <input type="text" name="pincode" id="pincode" [formControl]="pincode" placeholder="Pincode / Zip"
+                        required>
                 </div>
                 <div class="width50 padright">
                     <label for="Mobile">Mobile no</label>
-                    <input type="text" name="Mobile" id="Mobile"  [formControl]="mobile" placeholder="Enter mobile no.">
+                    <input type="text" name="Mobile" id="Mobile" [formControl]="mobile" placeholder="Enter mobile no.">
                 </div>
                 <div class="width:17px">
                     <label for="email">Email Address</label>
                     <input type="text" name="email" id="email" [formControl]="email" placeholder="Enter email-id">
                 </div>
-            </div>
+                <button class="btn btn-primary" routerLink="/order" id="SaveAddress" (click)="saveOrder()">Save Address</button>
 
-            <div class="col-5 col order">
-                <h3 class="topborder"><span>Your Order Item</span></h3>
-                <tr *ngFor="let list of product; let i= index">
-                    <td>{{i+1}}.</td>
-                    <td>{{list.name}}</td>
-
-                  
-                </tr>
-                <div class="row">
-                    <h4 class="inline">Item Total</h4>{{grandTotal|currency:'INR'}}
-                </div>
-                <div>
-                    <h5 class="inline difwidth">Shipping and Handling</h5>
-                    <p class="inline alignright center">Free Shipping</p>
-                </div>
-                <div>
-                    <h5>Total Amount</h5>{{grandTotal|currency:'INR'}}
-                </div>
-              
-                <button class="btn btn-primary" id="place-order" (click) = "saveOrder()">Place Order</button>
-                <!-- <button class="place-order" routerLink="/thankyou">Place Order</button> -->
             </div>
         </form>
     </div>

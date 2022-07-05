@@ -1,10 +1,10 @@
 <div class="card-top container-fluid">
   <div class="container d-flex">
     <div class="item">
-        <a (click)="filter('')">
-          <img src="../../../assets/images/AllProduct.jpg" alt="AllProduct">
-          <h6>All Product</h6>
-        </a>
+      <a (click)="filter('')">
+        <img src="../../../assets/images/AllProduct.jpg" alt="AllProduct">
+        <h6>All Product</h6>
+      </a>
     </div>
     <div class="item">
       <a (click)="filter('Vegetables')">
@@ -34,32 +34,29 @@
 </div>
 
 
- <div class="container mt-4 mb-4">
+<div class="container mt-4 mb-4">
   <!-- <h1 class="text-center"><strong>Some </strong> <span class="highlight">Grocery Products</span></h1> -->
   <div class="row">
-    <div class="col-lg-3 mt-3" *ngFor="let dt of filterCategory|paginate:{ itemsPerPage: 8, currentPage:p } | search:searchKey:'name'">
-      <div class="MenuBox" >
-        <img src="{{dt.image}}"/>
+    <div class="col-lg-3 mt-3"
+      *ngFor="let dt of filterCategory|paginate:{ itemsPerPage: 8, currentPage:p } | search:searchKey:'name'">
+      <div class="MenuBox">
+        <img src="{{dt.image}}" />
         <h1>{{dt.name}}</h1>
         <p>{{dt.price|currency:'INR'}}</p>
-        <button  class="btn btn-primary" id="cartbtn" (click)=addtocart(dt) (click)=saveProduct(dt)>Add to Cart</button>
+        <button class="btn btn-primary" id="cartbtn" (click)=addtocart(dt) (click)=saveProduct(dt)>Add to Cart</button>
       </div>
     </div>
     <pagination-controls (pageChange)="p =$event" class="float"></pagination-controls>
   </div>
-</div>  
+</div>
 
-<div class="row"class="success-msg">
+<div class="row" class="success-msg">
   <div class="col-xs-12">
-    <p class="alert alert-success"  *ngIf="showMsg" >
+    <p class="alert alert-success" *ngIf="showMsg">
       <strong>Added to Cart Successfully </strong> Please go to CheckOut!.
     </p>
-    <p class="alert alert-danger" *ngIf="showErrMsg" >
+    <p class="alert alert-danger" *ngIf="showErrMsg">
       Error
     </p>
   </div>
 </div>
-
-
-
-    
